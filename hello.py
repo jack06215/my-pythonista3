@@ -1,15 +1,15 @@
 import argparse
-from dataclasses import dataclass
-import json
-import appex
-from PIL import Image
-import io
 import base64
+import io
+from dataclasses import dataclass
+
+from PIL import Image
+
 
 @dataclass
 class Args:
-	name: str
-	data: str
+    name: str
+    data: str
 
 
 def load_image_from_base64_datauri(base64_datauri: str) -> Image.Image:
@@ -40,14 +40,14 @@ def convert_image_to_grayscale_base64(img: Image.Image) -> str:
 
 
 def main(args: Args):
-	image = load_image_from_base64_datauri(args.data)
-	res = convert_image_to_grayscale_base64(image)
-	print(res)
-	
+    image = load_image_from_base64_datauri(args.data)
+    res = convert_image_to_grayscale_base64(image)
+    print(res)
+
 
 if __name__ == "__main__":
-	args_parser = argparse.ArgumentParser()
-	args_parser.add_argument('--name')
-	args_parser.add_argument('--data')
-	args = vars(args_parser.parse_args())
-	main(Args(**args))
+    args_parser = argparse.ArgumentParser()
+    args_parser.add_argument("--name")
+    args_parser.add_argument("--data")
+    args = vars(args_parser.parse_args())
+    main(Args(**args))

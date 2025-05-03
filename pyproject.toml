@@ -1,0 +1,26 @@
+[project]
+authors = [
+  { name = "Jack Cho", email = "jack06215@gmail.com" },
+]
+dependencies = [
+  "pillow==11.2.1"
+]
+
+description = ""
+name = "my-pythoninsta3"
+# packages property removed as it is not allowed in the [project] table
+readme = "README.md"
+requires-python = ">=3.9,<3.11"
+version = "0.1.0"
+
+[project.optional-dependencies]
+dev = [
+  "pythonista-stubs==0.0.3",
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=2.0.0,<3.0.0"]
